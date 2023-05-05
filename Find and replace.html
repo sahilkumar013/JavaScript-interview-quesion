@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find and Replace</title>
+</head>
+<body>
+    
+	<label for="input-string">Input string:</label>
+	<input type="text" id="input-string">
+	<button onclick="displayString()">Display</button>
+
+	<h3 id="display-string"></h3>
+
+	<label for="find-string">Find:</label>
+	<input type="text" id="find-string">
+	<label for="replace-string">Replace:</label>
+	<input type="text" id="replace-string">
+	<button onclick="replaceString()">Replace</button>
+
+	<script>
+		let currentString = "";
+
+		function displayString() {
+			currentString = document.getElementById("input-string").value;
+			document.getElementById("display-string").innerText = currentString;
+		}
+
+		function replaceString() {
+			let findString = document.getElementById("find-string").value;
+			let replaceString = document.getElementById("replace-string").value;
+
+			currentString = currentString.replace(findString, replaceString);
+			document.getElementById("display-string").innerText = currentString;
+		} 
+	 </script>
+</body>
+</html>
